@@ -1,5 +1,4 @@
-"""
-Jalankan skrip ini di komputer Anda (BUKAN di sandbox Claude) untuk memvalidasi
+
 akurasi perhitungan Z-score otomatis, dengan membandingkan terhadap nilai
 Z-score asli dari e-PPGBM yang sudah ada di file Excel Puskesmas Taman Sari.
 
