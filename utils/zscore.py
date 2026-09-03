@@ -25,7 +25,14 @@ try:
     _PYGROWUP_OK = True
 except ImportError:
     _PYGROWUP_OK = False
+import tempfile
+from pathlib import Path
+import pygrowup_erknet.tables.table as _pg_table
 
+# Streamlit Cloud: site-packages read-only saat runtime,
+# jadi cache dialihkan ke /tmp yang selalu writable.
+_pg_table.cache_dir = Path(tempfile.gettempdir()) / "pygrowup_erknet_cache"
+_pg_table.cache_dir.mkdir(parents=True, exist_ok=True)
 
 @st.cache_resource
 def _get_calculator():
